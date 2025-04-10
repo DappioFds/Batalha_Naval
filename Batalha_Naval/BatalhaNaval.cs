@@ -6,7 +6,9 @@ class BatalhaNaval
     private char[,] tabuleiroJogador = new char[Tamanho, Tamanho];
     private char[,] tabuleiroComputador = new char[Tamanho, Tamanho];
     private Random random = new Random();
-    private int tentativas = 0; // Variável para contar o número de tentativas
+    private int tentativas = 0;
+    private bool[,] jogadasRealizadas = new bool[Tamanho, Tamanho];
+    
 
     // Construtor
     public BatalhaNaval()
@@ -15,7 +17,7 @@ class BatalhaNaval
         InicializarTabuleiro(tabuleiroComputador);
         PosicionarNavios(tabuleiroComputador);
     }
-
+        
     // Método para inicializar o tabuleiro
     private void InicializarTabuleiro(char[,] tabuleiro)
     {
@@ -32,7 +34,13 @@ class BatalhaNaval
     private void PosicionarNavios(char[,] tabuleiro)
     {
         PosicionarNavio(tabuleiro, 2); // Navios de 2 quadrados
+        PosicionarNavio(tabuleiro, 2); // Navios de 2 quadrados
+        PosicionarNavio(tabuleiro, 2); // Navios de 2 quadrados
+        PosicionarNavio(tabuleiro, 2); // Navios de 2 quadrados
         PosicionarNavio(tabuleiro, 3); // Navios de 3 quadrados
+        PosicionarNavio(tabuleiro, 3); // Navios de 3 quadrados
+        PosicionarNavio(tabuleiro, 3); // Navios de 3 quadrados
+        PosicionarNavio(tabuleiro, 4); // Navios de 4 quadrados
         PosicionarNavio(tabuleiro, 4); // Navios de 4 quadrados
     }
 
@@ -98,16 +106,34 @@ class BatalhaNaval
     public void IniciarJogo()
     {
         Console.WriteLine("Bem-vindo ao Batalha Naval!");
+        Console.WriteLine("Existe 4 Destroier (2 espaços)");
+        Console.WriteLine("Existe 3 Cruzador (3 espaços)");
+        Console.WriteLine("Existe 2 Navio-Tanque (4 espaços)");
         while (true)
         {
             MostrarTabuleiro(tabuleiroComputador, ocultarNavios: true);
 
-            int linha = PedirCoordenada("linha");
-            int coluna = PedirCoordenada("coluna");
+            int linha, coluna;
+            while (true)
+            {
+                linha = PedirCoordenada("linha");
+                coluna = PedirCoordenada("coluna");
 
-            tentativas++; // Incrementa a contagem de tentativas
+                if (!jogadasRealizadas[linha, coluna])
+                {
+                    jogadasRealizadas[linha, coluna] = true;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Você já fez essa jogada! Tente outra coordenada.");
+                }
+            }
+
+            tentativas++; // Incrementa apenas se a jogada for nova
 
             if (tabuleiroComputador[linha, coluna] == 'N')
+
             {
                 Console.WriteLine("Acertou um navio!");
                 tabuleiroComputador[linha, coluna] = 'X';
