@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batalha_Naval", "Batalha_Naval\Batalha_Naval.csproj", "{32DAC7A1-A667-439B-AAB0-B9695CF066A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste_Batalha_Naval", "Teste_Batalha_Naval\Teste_Batalha_Naval.csproj", "{1E05EC7B-0A6D-4FA6-B75C-0ACD2F65CAB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{32DAC7A1-A667-439B-AAB0-B9695CF066A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32DAC7A1-A667-439B-AAB0-B9695CF066A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32DAC7A1-A667-439B-AAB0-B9695CF066A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E05EC7B-0A6D-4FA6-B75C-0ACD2F65CAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E05EC7B-0A6D-4FA6-B75C-0ACD2F65CAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E05EC7B-0A6D-4FA6-B75C-0ACD2F65CAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E05EC7B-0A6D-4FA6-B75C-0ACD2F65CAB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
